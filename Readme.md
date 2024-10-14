@@ -1,4 +1,4 @@
-S# Pet Adoption Project
+# Pet Adoption Project
 
 ## Description
 The Pet Adoption Project is a web application that allows users to explore various pets available for adoption. Users can view pet details, sort them by price, and like their favorite pets. The application fetches data dynamically from an API, providing a seamless user experience.
