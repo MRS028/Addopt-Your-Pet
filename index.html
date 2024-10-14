@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt Your Pet</title>
+    <!-- tailwind and daisyui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/a78a932492.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+
+    <!-- Font-LATO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Style -->
+    <style>
+      .lato {
+        font-family: "Lato", sans-serif;
+      }
+      
+    </style>
+  </head>
+  <body class="lato my-5">
+    <!-- Header start -->
+    <header class="">
+      <div class="navbar bg-base-100 mx-auto lg:w-11/12">
+        <div class="navbar-start">
+          <div class="dropdown lg:hidden">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+
+          <p class="btn btn-ghost text-[32px]">
+            <img src="images/logo.webp" alt="" class="w-5" />Peddy
+          </p>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal text-[16px] opacity-75">
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end pr-5 lg:pr-0">
+          <button class="bg-white rounded-full w-9 h-9 border-slate-300 border">
+            <i class="fa-regular fa-user"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main start-->
+    <main>
+      <section>
+        <!-- countdown Modal -->
+        <div
+          id="adoptModal"
+          class="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+        >
+          <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-[310px]">
+            <span
+              class="text-black cursor-pointer float-right"
+              onclick="closeModal()"
+              >&times;</span
+            >
+            
+              <div class="flex justify-center"><img class="w-12 h-12" src="images/clapping.png" alt=""></div>
+              <div class="space-y-3">
+                <h1 class="text-3xl font-bold text-center">Congrats</h1>
+              <h2 class="text-xs opacity-70 font-bold text-center">
+                Adoption process is start for your pet...
+              </h2>
+              <p id="countdownDisplay" class="text-3xl font-bold text-center">
+                3
+              </p>
+              </div>
+            
+          </div>
+        </div>
+      </section>
+      <section class="text-center grid grid-cols-1 justify-center w-95%">
+        <div>
+          <h3 class="text-xl lg:text-2xl opacity-70 font-bold">
+            Bringing Families Together❤️‍🔥
+          </h3>
+          <h1 class="font-bold text-3xl p-1 lg:text-6xl py-5">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+          <p class="p-3 pb-8">
+            The color scheme incorporates warm, inviting tones, creating a friendly environment 
+            that resonates with animal lovers. Clear, concise headings<br class="hidden lg:flex" > and supportive text ensure that visitors understand 
+            the importance of adoption and the positive impact it has on pets and the community.<br class="hidden lg:flex" >
+        
+            at its layout. The point of using Lorem Ipsum is that it has a.
+          </p>
+          <button id="viewMoreButton" class="btn w-40 bg-[#0E7A81] text-white">View More</button>
+        </div>
+        <div class="items-center my-10 flex justify-center">
+          <img class="" src="images/pet.webp" alt="" />
+        </div>
+        <div  class="text-center">
+          <h3 class="lg:text-5xl text-3xl font-bold">Adopt Your Best Friend</h3>
+          <p class="text-[16px] py-4 px-2 opacity-85">
+            The emotional journey of adopting 
+            a pet and highlights the bond <br class="hidden lg:flex">between animals and their new families.
+            It conveys a sense of hope, companionship,
+             and the positive impact that adoption has on both pets and people.
+          </p>
+        </div>
+      </section>
+      <!-- Category Button -->
+      <section id="mainSection" class="mx-auto text-center w-[86%] md:my-12 lg:mb-24">
+        <div
+          id="categoriesbtn"
+          class="grid grid-cols-2 md:grid-cols-4 gap-5 pt-10"
+        ></div>
+        <div id="" class="items-center my-14 flex justify-between w-100%">
+          <h1 class="lg:text-3xl md:text-2xl my-3 text-sm font-bold">
+            Best Deal For you
+          </h1>
+          <button id="sortByPriceButton" onclick="sortByPrice()" class="btn text-white w-40 bg-[#0E7A81]">
+            Sort by price
+          </button>
+        </div>
+      </section>
+
+      <!-- main section -->
+      <section class="mx-auto w-[90%] text-center my-10 lg:my-20">
+        <section
+          class="grid lg:grid-cols-4 md:grid-cols-2 space-y-5 lg:space-y-0 gap-2 justify-items-center"
+        >
+        <!-- spinner -->
+          <div
+            id="loadspin"
+            class="hidden m-auto text-center w-[85%]  lg:col-span-3 md:col-span-2  pt-5 lg:pt-0"
+          >
+          <span class="loading loading-bars loading-lg"></span>
+          </div>
+        <!-- no-info -->
+        <div
+        id="no-info"
+        class="hidden m-auto card w-[85%] text-center p-5 md:col-span-2 bg-[#13131308] border-[2px] border-[#09080827] rounded-2xl"
+      >
+        <img class="m-auto w-20 md:w-36" src="images/error.webp" alt="" />
+        <h1 class="text-2xl font-bold pt-4 pb-3">
+          No Information Available
+        </h1>
+        <p class="lg:text-base text-xs">
+          This theme communicates a sense of absence or unavailability of information. It is designed to inform 
+          users that the specific content they are seeking is currently not accessible. The layout can feature a 
+          minimalist design, using neutral colors and simple graphics to convey the message clearly.
+        </p>
+      </div>
+      <div
+        id="petcontainer"
+        class=" lg:col-span-3 lg:grid-cols-3 lg:gap-5 justify-items-center  md:col-span-2  gap-5 lg:space-x-2  md:gap-4 md:grid-cols-2 "
+      >
+        <!-- <div class="mx-0 my-5 shadow-xl card bg-base-100 w-72 border border-slate-300">
+                        <figure class="px-6 pt-8">
+                          <img
+                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                            alt="Shoes"
+                            class="rounded-xl" />
+                        </figure>
+                        <div class="card-body text-left">
+                          <h2 class="card-title">Title:</h2>
+                          
+                          <div class="opacity-80">
+                            <p><i class="fa fa-th-large"></i> Breed: </p>
+                            <p><i class="fa-regular fa-calendar"></i>  Birth:</p>
+                            <p><i class="fa-sharp fa-solid fa-mercury"></i>  Gender: </p>
+                            <p><i class="fa-solid fa-dollar-sign"></i>  Price: </p>
+                          </div>
+                          <div class="space-x-1">
+                            <button class="btn border border-slate-200 w-[56px]"><i class="fa-duotone fa-solid fa-thumbs-up"></i></button>
+                            <button class="btn text-[#0E7A81] font-bold border border-slate-200">Adopt</button>
+                            <button class="btn text-[#0E7A81] font-bold border border-slate-200">Details</button>
+                        </div>
+                        </div>
+                      </div> -->
+      </div>
+
+      <!--like Click pets -->
+      <div class="lg:col-span-1 md:col-span-2 pt-4">
+        <div
+          id="likepets"
+          class="card bg-base-100 border-[1px] border-[#1313131A] w-[300px] h-[465px] grid grid-cols-2 gap-4 p-4 shadow-xl"
+        >
+          
+        </div>
+        <div id="modals">
+        </div>
+      </div>
+        </section>
+      </section>
+    </main>
+    <!-- Main End-->
+
+    <!-- Footer start-->
+    <footer class="footer bg-neutral text-neutral-content p-10">
+      <nav class="lg:px-10">
+        <h6 class="text-2xl">
+          <img src="images/logo.webp" alt="" class="w-5 inline" /> Peddy
+        </h6>
+        <p>Location: av. Washington 165, NY CA 54003</p>
+        <p>Phone: +31 85 964 47 25</p>
+        <p>Email: info@yourdomain.com</p>
+        <p>Openings hours: 9.00 AM - 5.00 PM</p>
+        <div class="grid grid-flow-col gap-4">
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+      <nav class="">
+        <h6 class="text-2xl">Useful Links</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a>
+      </nav>
+      <nav class="">
+        <form>
+          <h6 class="text-2xl pb-2 text-white">Drop a Messege</h6>
+          <fieldset class="form-control w-80">
+            <div class="join flex flex-col">
+              <input
+                type="text"
+                placeholder="Enter Your Email"
+                class="input input-bordered w-52"
+              />
+              <div class="my-3">
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </nav>
+    </footer>
+    <!-- Footer End-->
+    <script src="JS/script.js"></script>
+  </body>
+</html>
